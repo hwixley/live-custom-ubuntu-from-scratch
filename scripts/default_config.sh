@@ -21,6 +21,9 @@ export TARGET_KERNEL_PACKAGE="linux-generic"
 # the volume id, and the hostname of the live environment are set from this name.
 export TARGET_NAME="ubuntu-from-scratch"
 
+# The OS locale
+export TARGET_LOCALE="en_GB.UTF-8"
+
 # The text label shown in GRUB for booting into the live environment
 export GRUB_LIVEBOOT_LABEL="Try Ubuntu FS without installing"
 

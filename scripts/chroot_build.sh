@@ -147,7 +147,9 @@ function install_pkg() {
     apt-get autoremove -y
 
     # final touch
-    dpkg-reconfigure locales
+    update-locale "LANG=${TARGET_LOCALE}"
+    locale-gen --purge "${TARGET_LOCALE}"
+    dpkg-reconfigure --frontend noninteractive locales
 
     # network manager
     cat <<EOF > /etc/NetworkManager/NetworkManager.conf
