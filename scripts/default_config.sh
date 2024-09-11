@@ -39,8 +39,11 @@ export TARGET_PACKAGE_REMOVE="
     os-prober \
 "
 
+# custom script
+export TARGET_CUSTOMISATION_SCRIPT="custom.sh"
+
 # Non-interactive installs
-export DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND="noninteractive"
 
 # Package customisation function.  Update this function to customize packages
 # present on the installed system.
