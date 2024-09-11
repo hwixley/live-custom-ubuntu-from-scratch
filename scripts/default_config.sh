@@ -22,7 +22,7 @@ export TARGET_KERNEL_PACKAGE="linux-generic"
 export TARGET_NAME="ubuntu-from-scratch"
 
 # The OS locale
-export TARGET_LOCALE="en_GB.UTF-8"
+export TARGET_LOCALE="en_GB"
 
 # The text label shown in GRUB for booting into the live environment
 export GRUB_LIVEBOOT_LABEL="Try Ubuntu FS without installing"
@@ -38,6 +38,9 @@ export TARGET_PACKAGE_REMOVE="
     laptop-detect \
     os-prober \
 "
+
+# Non-interactive installs
+export DEBIAN_FRONTEND=noninteractive
 
 # Package customisation function.  Update this function to customize packages
 # present on the installed system.
