@@ -118,6 +118,9 @@ function run_chroot() {
     if [[ -f "$SCRIPT_DIR/config.sh" ]]; then
         sudo ln -f $SCRIPT_DIR/config.sh chroot/root/config.sh
     fi
+    if [[ -f "$SCRIPT_DIR/custom.sh" ]]; then
+        sudo ln -f $SCRIPT_DIR/custom.sh chroot/root/custom.sh
+    fi
 
     # Launch into chroot environment to build install image.
     sudo chroot chroot /usr/bin/env DEBIAN_FRONTEND=${DEBIAN_FRONTEND:-readline} /root/chroot_build.sh -

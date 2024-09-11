@@ -143,6 +143,13 @@ function install_pkg() {
     # Call into config function
     customize_image
 
+    # Run custom script
+    if [[ -f "$SCRIPT_DIR/custom.sh" ]]; then 
+        . "$SCRIPT_DIR/custom.sh"
+    else
+        echo "ERROR: script '${SCRIPT_DIR}/config.sh' does not exist"
+    fi
+
     # remove unused and clean up apt cache
     apt-get autoremove -y
 
